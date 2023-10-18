@@ -22,6 +22,9 @@ body {
 .container-articule{
   position: fixed;
   display: flex;
+  background-color: white;
+  margin-top: 10%;
+  margin-left: 5%;
 }
 
 .menu-container {
