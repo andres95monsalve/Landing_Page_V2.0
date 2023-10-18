@@ -19,6 +19,11 @@ body {
   margin: auto;
 }
 
+.container-articule{
+  position: fixed;
+  display: flex;
+}
+
 .menu-container {
   position: fixed;
   top: 1rem;
