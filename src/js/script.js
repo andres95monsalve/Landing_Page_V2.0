@@ -56,7 +56,6 @@ function onWindowResize() {
 }
 
 function loadTexture(path) {
-  // Concatenar la ruta de la carpeta 'img' con el nombre del archivo de imagen
   const imgPath = 'src/' + 'img/' + path;
   const texture = new THREE.Texture();
   const material = new THREE.MeshBasicMaterial({ map: texture, overdraw: 0.5 });
@@ -65,7 +64,7 @@ function loadTexture(path) {
     texture.image = this;
     texture.needsUpdate = true;
   };
-  image.src = imgPath; // Usar la nueva ruta de la imagen
+  image.src = imgPath;
   return material;
 }
 
