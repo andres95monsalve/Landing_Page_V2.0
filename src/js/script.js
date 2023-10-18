@@ -17,12 +17,12 @@ function init() {
   );
   scene = new THREE.Scene();
   const materials = [
-    loadTexture("./space4.jpg"),
-    loadTexture("./space2.jpg"),
-    loadTexture("./space1.jpg"),
-    loadTexture("./space6.jpg"),
-    loadTexture("./space3.jpg"),
-    loadTexture("./space5.jpg"),
+    loadTexture("space4.jpg"),
+    loadTexture("space2.jpg"),
+    loadTexture("space1.jpg"),
+    loadTexture("space6.jpg"),
+    loadTexture("space3.jpg"),
+    loadTexture("space5.jpg"),
   ];
   const mesh = new THREE.Mesh(
     new THREE.BoxGeometry(300, 300, 300, 7, 7, 7),
@@ -56,6 +56,8 @@ function onWindowResize() {
 }
 
 function loadTexture(path) {
+  // Concatenar la ruta de la carpeta 'img' con el nombre del archivo de imagen
+  const imgPath = 'src/' + 'img/' + path;
   const texture = new THREE.Texture();
   const material = new THREE.MeshBasicMaterial({ map: texture, overdraw: 0.5 });
   const image = new Image();
@@ -63,7 +65,7 @@ function loadTexture(path) {
     texture.image = this;
     texture.needsUpdate = true;
   };
-  image.src = path;
+  image.src = imgPath; // Usar la nueva ruta de la imagen
   return material;
 }
 
