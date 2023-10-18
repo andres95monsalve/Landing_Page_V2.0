@@ -85,3 +85,11 @@ body {
 .title-1 {
   margin-left: 3%;
 }
+
+.flecha-principal{
+  position: relative;
+  display: flex;
+  width: 10%;
+  margin-left: 80%;
+  margin-top: 5%;
+}
