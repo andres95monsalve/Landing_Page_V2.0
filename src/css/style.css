@@ -51,6 +51,7 @@ body {
   align-items: center;
   margin-left: 80%;
   margin-top: -6%;
+  border-radius: 25%;
 }
 
 #menu.visible {
@@ -66,6 +67,7 @@ body {
   justify-content: space-around;
   align-items: left;
   padding: 1%;
+  border-radius: 10%;
 }
 
 .menu-item:hover,
