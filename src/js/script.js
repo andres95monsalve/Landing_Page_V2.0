@@ -194,26 +194,24 @@ tl.to('.imagen-final', {
 
 document.getElementById("button-up").addEventListener("click", scrollUp);
 
-function scrollUp(){
-
+function scrollUp() {
     var currentScroll = document.documentElement.scrollTop;
 
-    if (currentScroll > 0){
+    if (currentScroll > 0) {
         window.requestAnimationFrame(scrollUp);
-        window.scrollTo (0, currentScroll - (currentScroll / 10));
+        window.scrollTo(0, currentScroll - (currentScroll / 10));
     }
 }
 
-buttonUp = document.getElementById("button-up");
+var buttonUp = document.getElementById("button-up");
+buttonUp.style.transform = "scale(0)";
 
-window.onscroll = function(){
-
+window.onscroll = function() {
     var scroll = document.documentElement.scrollTop;
 
-    if (scroll > 500){
+    if (scroll > 700) {
         buttonUp.style.transform = "scale(1)";
-    }else if(scroll < 500){
+    } else {
         buttonUp.style.transform = "scale(0)";
     }
-
 }
