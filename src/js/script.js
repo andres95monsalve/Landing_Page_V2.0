@@ -192,6 +192,9 @@ tl.to('.imagen-final', {
   duration: 0.5
 });
 
+var buttonUp = document.getElementById("button-up");
+buttonUp.style.transform = "scale(0)";
+
 document.getElementById("button-up").addEventListener("click", scrollUp);
 
 function scrollUp() {
@@ -203,13 +206,10 @@ function scrollUp() {
     }
 }
 
-var buttonUp = document.getElementById("button-up");
-buttonUp.style.transform = "scale(0)";
-
 window.onscroll = function() {
     var scroll = document.documentElement.scrollTop;
 
-    if (scroll > 700) {
+    if (scroll > 800) {
         buttonUp.style.transform = "scale(1)";
     } else {
         buttonUp.style.transform = "scale(0)";
