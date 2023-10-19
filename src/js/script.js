@@ -39,11 +39,19 @@ function init() {
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(container.offsetWidth, container.offsetHeight);
   container.appendChild(renderer.domElement);
-  document.addEventListener("mousedown", onDocumentMouseDown, { passive: false });
-  document.addEventListener("mousemove", onDocumentMouseMove, { passive: false });
+  document.addEventListener("mousedown", onDocumentMouseDown, {
+    passive: false,
+  });
+  document.addEventListener("mousemove", onDocumentMouseMove, {
+    passive: false,
+  });
   document.addEventListener("mouseup", onDocumentMouseUp, { passive: false });
-  document.addEventListener("touchstart", onDocumentTouchStart, { passive: false });
-  document.addEventListener("touchmove", onDocumentTouchMove, { passive: false });
+  document.addEventListener("touchstart", onDocumentTouchStart, {
+    passive: false,
+  });
+  document.addEventListener("touchmove", onDocumentTouchMove, {
+    passive: false,
+  });
   window.addEventListener("resize", onWindowResize, { passive: false });
   document.body.style.cursor = "default"; // Desactivar el mouse en el objeto 3D
 }
@@ -57,7 +65,7 @@ function onWindowResize() {
 }
 
 function loadTexture(path) {
-  const imgPath = 'src/' + 'img/' + path;
+  const imgPath = "src/" + "img/" + path;
   const texture = new THREE.Texture();
   const material = new THREE.MeshBasicMaterial({ map: texture, overdraw: 0.5 });
   const image = new Image();
@@ -115,24 +123,23 @@ function onDocumentTouchMove(e) {
   }
 }
 
-
 function animate() {
   requestAnimationFrame(animate);
   update();
 }
 animate();
 
-const menuBtn = document.getElementById('menuBtn');
-const menuSection = document.getElementById('menu');
-menuBtn.addEventListener('click', toggleMenu);
-document.body.addEventListener('click', function(event) {
+const menuBtn = document.getElementById("menuBtn");
+const menuSection = document.getElementById("menu");
+menuBtn.addEventListener("click", toggleMenu);
+document.body.addEventListener("click", function (event) {
   if (!menuSection.contains(event.target) && event.target !== menuBtn) {
     hideMenu();
   }
 });
 
 function toggleMenu() {
-  if (menuSection.classList.contains('visible')) {
+  if (menuSection.classList.contains("visible")) {
     hideMenu();
   } else {
     showMenu();
@@ -143,52 +150,51 @@ function hideMenu() {
   gsap.to(menuSection, {
     opacity: 0,
     duration: 0.8,
-    onComplete: function() {
-      menuSection.classList.remove('visible');
-      menuSection.innerHTML = '';
-    }
+    onComplete: function () {
+      menuSection.classList.remove("visible");
+      menuSection.innerHTML = "";
+    },
   });
 }
 
 function showMenu() {
   const menuItems = [
-    { text: 'Proyectos', link: 'https://www.facebook.com' },
-    { text: 'Publicaciones', link: 'https://www.twitter.com' },
-    { text: 'FAQ', link: 'https://www.google.com' },
-    { text: 'Carreras', link: 'https://www.google.com' },
-    { text: 'Quienes Somos', link: 'https://www.google.com' },
-    { text: 'Contacto', link: 'https://www.google.com' }
+    { text: "Proyectos", link: "https://www.facebook.com" },
+    { text: "Publicaciones", link: "https://www.twitter.com" },
+    { text: "FAQ", link: "https://www.google.com" },
+    { text: "Carreras", link: "https://www.google.com" },
+    { text: "Quienes Somos", link: "https://www.google.com" },
+    { text: "Contacto", link: "https://www.google.com" },
   ];
   menuSection.innerHTML = menuItems
     .map(
-      item =>
-        `<li><a href="${item.link}" class="texto">${item.text}</a></li>`
+      (item) => `<li><a href="${item.link}" class="texto">${item.text}</a></li>`
     )
-    .join('');
+    .join("");
   gsap.set(menuSection, { opacity: 1 });
   gsap.to(menuSection, {
     opacity: 1,
     duration: 0.8,
-    onStart: function() {
-      menuSection.classList.add('visible');
-    }
+    onStart: function () {
+      menuSection.classList.add("visible");
+    },
   });
 }
 
 let tl = gsap.timeline({
   scrollTrigger: {
-    trigger: '.imagen-final',
-    start: '-50% left',
-    end: '200% center',
+    trigger: ".imagen-final",
+    start: "-50% left",
+    end: "200% center",
     scrub: true,
     markers: false,
-    toggleActions: 'play reverse play reverse',
-  }
+    toggleActions: "play reverse play reverse",
+  },
 });
 
-tl.to('.imagen-final', {
+tl.to(".imagen-final", {
   x: 800,
-  duration: 0.5
+  duration: 0.5,
 });
 
 var buttonUp = document.getElementById("button-up");
@@ -197,20 +203,20 @@ buttonUp.style.transform = "scale(0)";
 document.getElementById("button-up").addEventListener("click", scrollUp);
 
 function scrollUp() {
-    var currentScroll = document.documentElement.scrollTop;
+  var currentScroll = document.documentElement.scrollTop;
 
-    if (currentScroll > 0) {
-        window.requestAnimationFrame(scrollUp);
-        window.scrollTo(0, currentScroll - (currentScroll / 10));
-    }
+  if (currentScroll > 0) {
+    window.requestAnimationFrame(scrollUp);
+    window.scrollTo(0, currentScroll - currentScroll / 10);
+  }
 }
 
-window.onscroll = function() {
-    var scroll = document.documentElement.scrollTop;
+window.onscroll = function () {
+  var scroll = document.documentElement.scrollTop;
 
-    if (scroll > 800) {
-        buttonUp.style.transform = "scale(1)";
-    } else {
-        buttonUp.style.transform = "scale(0)";
-    }
-}
+  if (scroll > 800) {
+    buttonUp.style.transform = "scale(1)";
+  } else {
+    buttonUp.style.transform = "scale(0)";
+  }
+};
