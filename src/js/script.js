@@ -69,13 +69,6 @@ function loadTexture(path) {
   return material;
 }
 
-function onDocumentMouseDown(e) {
-  e.preventDefault();
-  isUserInteracting = true;
-  lon = (e.clientX / window.innerWidth) * 360 - 180;
-  lat = -(e.clientY / window.innerHeight) * 180 + 90;
-}
-
 function update() {
   if (isUserInteracting === false) {
     lon += 0.1;
@@ -91,6 +84,12 @@ function update() {
   renderer.render(scene, camera);
 }
 
+function onDocumentMouseDown(e) {
+  isUserInteracting = true;
+  lon = (e.clientX / window.innerWidth) * 360 - 180;
+  lat = -(e.clientY / window.innerHeight) * 180 + 90;
+}
+
 function onDocumentMouseMove(e) {
   if (isUserInteracting === true) {
     lon = (e.clientX / window.innerWidth) * 360 - 180;
@@ -104,7 +103,6 @@ function onDocumentMouseUp() {
 
 function onDocumentTouchStart(e) {
   if (e.touches.length == 1) {
-    e.preventDefault();
     lon = (e.touches[0].pageX / window.innerWidth) * 360 - 180;
     lat = -(e.touches[0].pageY / window.innerHeight) * 180 + 90;
   }
@@ -112,11 +110,11 @@ function onDocumentTouchStart(e) {
 
 function onDocumentTouchMove(e) {
   if (e.touches.length == 1) {
-    e.preventDefault();
     lon = (e.touches[0].pageX / window.innerWidth) * 360 - 180;
     lat = -(e.touches[0].pageY / window.innerHeight) * 180 + 90;
   }
 }
+
 
 function animate() {
   requestAnimationFrame(animate);
