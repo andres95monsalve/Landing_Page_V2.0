@@ -122,7 +122,7 @@ body {
   margin-top: -10%;
 }
 
-#start-page{
+#button-up{
   width: 5%;
   height: 6%;
   background: #000000;
@@ -141,11 +141,11 @@ body {
   transform: translateY(100px);
 }
 
-#start-page::before {
+#button-up::before {
   content: "↑";
 }
 
-#start-page.show {
+#button-up.show {
   transform: translateY(0);
 }
 

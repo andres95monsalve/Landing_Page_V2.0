@@ -192,7 +192,7 @@ tl.to('.imagen-final', {
   duration: 0.5
 });
 
-document.getElementById("start-page").addEventListener("click", scrollUp);
+document.getElementById("button-up").addEventListener("click", scrollUp);
 
 function scrollUp(){
 
@@ -204,7 +204,7 @@ function scrollUp(){
     }
 }
 
-buttonUp = document.getElementById("start-page");
+buttonUp = document.getElementById("button-up");
 
 window.onscroll = function(){
 
