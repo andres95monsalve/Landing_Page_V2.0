@@ -45,6 +45,7 @@ function init() {
   document.addEventListener("touchstart", onDocumentTouchStart, { passive: false });
   document.addEventListener("touchmove", onDocumentTouchMove, { passive: false });
   window.addEventListener("resize", onWindowResize, { passive: false });
+  document.body.style.cursor = "default"; // Desactivar el mouse en el objeto 3D
 }
 init();
 
