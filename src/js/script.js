@@ -1,30 +1,64 @@
+"use strict";
+
 var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+var camera = new THREE.PerspectiveCamera(
+  75,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  1000
+);
 
 var renderer = new THREE.WebGLRenderer({ alpha: true });
-renderer.setSize(window.innerWidth * 0.4, window.innerHeight);
+var canvasWidth = 800; // Tamaño fijo en píxeles
+var canvasHeight = 600; // Tamaño fijo en píxeles
+renderer.setSize(canvasWidth, canvasHeight);
+renderer.domElement.style.position = "relative";
+renderer.domElement.style.display = "flex";
 document.body.appendChild(renderer.domElement);
 
 var geometry = new THREE.PlaneGeometry(1.1, 0.4);
 var textureLoader = new THREE.TextureLoader();
-var texture = textureLoader.load('src/img/logo.png');
-var material = new THREE.MeshBasicMaterial({ map: texture, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide });
+var texture = textureLoader.load("src/img/logo.png");
+var material = new THREE.MeshBasicMaterial({
+  map: texture,
+  transparent: true,
+  alphaTest: 0.5,
+  side: THREE.DoubleSide,
+});
 var plane = new THREE.Mesh(geometry, material);
 scene.add(plane);
 
 camera.position.z = 2;
 
+function onWindowResize(event) {
+  var aspect = window.innerWidth / window.innerHeight;
+  renderer.setSize(canvasWidth, canvasHeight);
+  camera.aspect = aspect;
+  camera.updateProjectionMatrix();
+
+  var scaleFactor = window.innerWidth / window.innerHeight;
+  plane.position.x = scaleFactor > 1 ? 0 : -0.5 * (1 - scaleFactor);
+}
+
+window.addEventListener(
+  "resize",
+  function (event) {
+    onWindowResize(event);
+  },
+  false
+);
+
 function render() {
-    plane.rotation.y += 0.02;
-    requestAnimationFrame(render);
-    renderer.render(scene, camera);
+  plane.rotation.y += 0.02;
+  requestAnimationFrame(render);
+  renderer.render(scene, camera);
 }
 render();
-
 
 const menuBtn = document.getElementById("menuBtn");
 const menuSection = document.getElementById("menu");
 menuBtn.addEventListener("click", toggleMenu);
+
 document.body.addEventListener("click", function (event) {
   if (!menuSection.contains(event.target) && event.target !== menuBtn) {
     hideMenu();
@@ -76,28 +110,28 @@ function showMenu() {
   });
 }
 
-
-let tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".imagen-final",
-    start: "-50% right",
-    end: "200% right",
-    scrub: true,
-    markers: false,
-    toggleActions: "play reverse play reverse",
-  },
-});
-
-tl.to(".imagen-final", {
-  x: -200,
-  duration: 0.5,
-});
-
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: ".imagen-final",
+      start: "-100%",
+      end: "400% right",
+      scrub: true,
+      markers: false,
+      toggleActions: "play reverse play reverse",
+    },
+  })
+  .to(".imagen-final", {
+    x: -200,
+    duration: 0.5,
+  });
 
 var buttonUp = document.getElementById("button-up");
 buttonUp.style.transform = "scale(0)";
 
-document.getElementById("button-up").addEventListener("click", scrollUp);
+document.getElementById("button-up").addEventListener("click", function () {
+  scrollUp();
+});
 
 function scrollUp() {
   var currentScroll = document.documentElement.scrollTop;

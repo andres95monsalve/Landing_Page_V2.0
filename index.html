@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proyecto V3.0</title>
-    <link rel="icon" href="src/img/logo.ico" type="image/x-icon">
+    <link rel="icon" href="src/img/logo.ico" type="image/x-icon" />
     <link
       rel="preload"
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
@@ -23,8 +23,8 @@
 
   <body>
     <div class="container" id="container">
-      <canvas class="logo-principal"></canvas>
       <div class="menu-container">
+        <canvas class="logo-principal"></canvas>
         <button id="menuBtn" class="menu-item">Menu</button>
         <ul id="menu" class="section"></ul>
       </div>
@@ -35,6 +35,10 @@
           class="imagen-1"
           src="src/img/marcelo-design-x-app-development-web-design2-marketing.png"
         />
+        <div>
+        <img class="imagen-2" src="src/img/business-website-1280x1280.png"/>
+        <p class="text-img-2">Keeping your website maintained improves your business’s reputation, keeps your site secure, and helps you gain more leads and sales. While you can conduct website maintenance yourself, working with a professional website maintenance company like MDX can help you make sure you cover all your bases.</p>
+        </div>
         <div class="sobre-nosotros">
           Somos una agencia creativa que ofrece soluciones digitales para
           empresas que quieren impactar la era digital, crear conciencia sobre
@@ -62,33 +66,104 @@
           dedicación. Lo siguiente es una demostracion de lo que nosotros
           creamos.
           <br />
-          <img src="src/img/flecha.jpeg" class="flecha-principal" />
         </div>
-        
+      </div>
+      <img class="imagen-final" src="src/img/Windows-bro-1280x1280.png" />
+      <div class="texto-final">
+        Throughout the process, we adhere to unique benchmarks to ensure that
+        your brand is given the utmost care and respect it deserves. We consider
+        every client our partner and work for their business’s success as we do
+        for ours. We customize web design and marketing strategies specific to
+        each client, and we welcome with open arms all companies irrespective of
+        whether they are small, medium, or large. Our clients think of us as
+        their very own brand strategist and design experts. Allow us to
+        contribute our bit towards your company’s growth with our determination,
+        passion, and dedication.
+      </div>
+      <div class="table">
+        <table class="table1">
+          <tr>
+            <td><img src="src/img/satisfied.png" /></td>
+            <td class="texto-table">
+              Trust is the cornerstone of everything we do. We deliver on all of
+              our promises in every service offered. We are aware of how
+              difficult it can be to leave your business in the hands of an
+              agency that you hardly know, but our clients can speak for us.
+              That is why we prove at all times that the trust placed in us is
+              worth it.
+            </td>
+          </tr>
+          <tr class="t-texto2">
+            <td><img src="src/img/2.png" /></td>
+            <td class="texto-table">
+              Competition is our world; top performance is our goal. For we want
+              to create value on a permanent basis. “Quality First” is a core
+              corporate value at Marcelo Design X: Our services always meet the
+              highest quality standards. We overcome obstacles and boundaries.
+              And we never let up in any of these endeavors.
+            </td>
+          </tr>
+        </table>
+        <table class="table2">
+          <tr>
+            <td><img src="src/img/6.png" /></td>
+            <td>
+              We are methodical in our projects, we are quite thorough and we
+              never start without a plan before.
+            </td>
+          </tr>
+          <tr class="t-texto2">
+            <td><img src="src/img/satisfied.png" /></td>
+            <td>
+              We are always looking for ways to innovate in the digital age. We
+              want our clients to always be updated with the top strategies.
+            </td>
+          </tr>
+        </table>
       </div>
       <h1 id="text-contact">Contacto</h1>
-      <img class="logo-correo" src="src/img/logo-correo.png">
-      <a href="mailto:andres95monsalve@gmail.com" id="email-contact">Enviar correo electrónico a Andrés</a>
+      <img class="logo-correo" src="src/img/logo-correo.png" />
+      <a href="mailto:andres95monsalve@gmail.com" id="email-contact"
+        >Enviar correo electrónico a Andrés</a
+      >
+
       <div class="contacto">
         <a href="https://wa.me/+584140762327">
-          <img
-            src="src/img/ws-logo.png"
-            class="logo-ws"
-          />
+          <img src="src/img/ws-logo.png" class="logo-ws" />
         </a>
         <a
           href="https://wa.me/+584140762327"
           class="contacto-ws"
-          target="_blank">Enviar mensaje por WhatsApp a Andrés</a>
+          target="_blank"
+          >Enviar mensaje por WhatsApp a Andrés</a
+        >
       </div>
     </div>
-    <img class="imagen-final" src="src/img/Windows-bro-1280x1280.png" />
+
+    <footer class="ft-principal">
+      <div class="ft-pag">
+        <a
+          href="https://www.facebook.com/"
+          onClick="window.open(this.href); return false;"
+          ><img class="ft-pag-1" src="src/img/logo-facebook.png"
+        /></a>
+        <a
+          href="https://twitter.com/"
+          onClick="window.open(this.href); return false;"
+          ><img class="ft-pag-1" src="src/img/logo-twitter.png"
+        /></a>
+        <a
+          href="https://www.instagram.com/"
+          onClick="window.open(this.href); return false;"
+          ><img class="ft-pag-1" src="src/img/logo-instagram.png"
+        /></a>
+      </div>
+    </footer>
     <div id="button-up"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/dist/lenis.min.js"></script>
     <script src="src/js/script.js"></script>
-    <script src="src/js/logo.js"></script>
   </body>
 </html>
