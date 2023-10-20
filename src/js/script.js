@@ -9,8 +9,8 @@ var camera = new THREE.PerspectiveCamera(
 );
 
 var renderer = new THREE.WebGLRenderer({ alpha: true });
-var canvasWidth = 800; // Tamaño fijo en píxeles
-var canvasHeight = 600; // Tamaño fijo en píxeles
+var canvasWidth = 800;
+var canvasHeight = 600;
 renderer.setSize(canvasWidth, canvasHeight);
 renderer.domElement.style.position = "relative";
 renderer.domElement.style.display = "flex";

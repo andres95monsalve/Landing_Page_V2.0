@@ -11,7 +11,7 @@ body {
 
 canvas {
   position: absolute;
-  right: 12vh; /* Define la posición en píxeles desde el borde izquierdo */
+  right: 12vh;
   top: -195vh;
 }
 
@@ -68,18 +68,18 @@ canvas {
 
 #menu.visible {
   position: fixed;
-  top: 8%; /* Cambia este valor según tu preferencia para la posición vertical del menú */
+  top: 8%;
   right: 50%;
   background-color: #ff4141;
   width: 30%;
-  height: 50px; /* Establece la altura deseada del menú */
+  height: 50px;
   z-index: 998;
   list-style: none;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px; /* Ajusta el espaciado interno del menú según tus necesidades */
-  border-radius: 25px; /* Establece el radio de borde según tus necesidades */
+  padding: 10px;
+  border-radius: 25px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -115,7 +115,7 @@ canvas {
   color: white;
   width: 35%;
   height: 30%;
-  text-align: justify; /* Justificar el texto dentro del elemento */
+  text-align: justify;
 }
 
 
@@ -246,7 +246,7 @@ canvas {
 .table2 td {
   padding: 10px;
   border: 1px;
-  text-align: justify; /* Alinea el texto justificado dentro de las celdas */
+  text-align: justify;
 }
 
 .imagen-final {
