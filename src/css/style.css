@@ -7,6 +7,13 @@ body {
   overflow-x: hidden;
 }
 
+canvas {
+  position: absolute;
+  top: -43%;
+  left: -7%;
+}
+
+
 .container {
   min-height: 100vh;
   width: 100vw;
@@ -24,7 +31,7 @@ body {
 
 .container-article {
   position: relative;
-  margin-top: 2%;
+  margin-top: 3%;
   margin-left: 5%;
   width: 88%;
   background-color: #FF4141;
@@ -51,14 +58,14 @@ body {
   justify-content: space-around;
   align-items: center;
   margin-left: 80%;
-  margin-top: -6%;
+  margin-top: -4%;
   border-radius: 25%;
   border-color: white;
 }
 
 #menu.visible {
   position: fixed;
-  top: 12%;
+  top: 8%;
   right: 25%;
   background-color: #FF4141;
   width: 50%;

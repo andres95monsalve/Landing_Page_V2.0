@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proyecto V3.0</title>
+    <link rel="icon" href="src/img/logo.ico" type="image/x-icon">
     <link
       rel="preload"
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
@@ -22,7 +23,7 @@
 
   <body>
     <div class="container" id="container">
-      <img class="logo-principal" src="src/img/logo.png" />
+      <canvas class="logo-principal"></canvas>
       <div class="menu-container">
         <button id="menuBtn" class="menu-item">Menu</button>
         <ul id="menu" class="section"></ul>
@@ -77,16 +78,16 @@
         <a
           href="https://wa.me/+584140762327"
           class="contacto-ws"
-          target="_blank"
-          >Enviar mensaje por WhatsApp a Andrés</a>
+          target="_blank">Enviar mensaje por WhatsApp a Andrés</a>
       </div>
     </div>
     <img class="imagen-final" src="src/img/Windows-bro-1280x1280.png" />
     <div id="button-up"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/dist/lenis.min.js"></script>
     <script src="src/js/script.js"></script>
+    <script src="src/js/logo.js"></script>
   </body>
 </html>
