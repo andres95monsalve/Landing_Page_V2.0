@@ -114,17 +114,18 @@ gsap
   .timeline({
     scrollTrigger: {
       trigger: ".imagen-final",
-      start: "-100%",
-      end: "400% right",
+      start: "-50% center",
+      end: "200% center",
       scrub: true,
       markers: false,
-      toggleActions: "play reverse play reverse",
+      toggleActions: "play reverse play",
     },
   })
   .to(".imagen-final", {
-    x: -200,
+    x: -1050,
     duration: 0.5,
   });
+
 
 var buttonUp = document.getElementById("button-up");
 buttonUp.style.transform = "scale(0)";
