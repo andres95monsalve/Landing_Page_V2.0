@@ -112,18 +112,38 @@ body {
   position: relative;
   display: flex;
   text-decoration: none;
-  color: white;
+  color: rgb(0, 0, 0);
   left: 13%;
   margin: 3%;
-  margin-top: -7%;
+  margin-top: 2%;
 }
 
 .logo-ws {
   position: relative;
   display: flex;
-  width: 10%;
+  width: 4%;
   margin: 2%;
-  margin-top: -10%;
+  margin-top: 2%;
+  left: 6%;
+}
+
+.contacto-ws{
+  position: relative;
+  margin-top: -5%;
+  margin-left: 0.1%;
+}
+
+#text-contact{
+  position: relative;
+  margin-top: 3%;
+  margin-left: 10%;
+}
+
+#email-contact{
+  position: relative;
+  margin-left: 12%;
+  text-decoration: none;
+  color: black;
 }
 
 #button-up {
@@ -159,7 +179,8 @@ body {
 }
 
 .imagen-final{
-  margin-left: 30%;
-  margin-top: -30%;
+  margin-left: 70%;
+  margin-top: -15%;
   z-index: -999;
+  width: 30%;
 }

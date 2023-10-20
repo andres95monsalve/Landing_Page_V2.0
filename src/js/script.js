@@ -56,8 +56,8 @@ function showMenu() {
 let tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".imagen-final",
-    start: "-50% left",
-    end: "40% center",
+    start: "-50% right",
+    end: "200% right",
     scrub: true,
     markers: false,
     toggleActions: "play reverse play reverse",
@@ -65,8 +65,7 @@ let tl = gsap.timeline({
 });
 
 tl.to(".imagen-final", {
-  scaleX: 0.3,
-  scaleY: 0.3,
+  x: -200,
   duration: 0.5,
 });
 
