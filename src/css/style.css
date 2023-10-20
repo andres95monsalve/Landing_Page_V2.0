@@ -134,6 +134,14 @@ canvas {
   left: 6%;
 }
 
+.logo-correo{
+  position: relative;
+  display: flex;
+  width: 4%;
+  margin-left: 7%;
+  margin-top: 3%;
+}
+
 .contacto-ws{
   position: relative;
   margin-top: -5%;
@@ -148,7 +156,9 @@ canvas {
 
 #email-contact{
   position: relative;
+  display: flex;
   margin-left: 12%;
+  margin-top: -2.6%;
   text-decoration: none;
   color: black;
 }
