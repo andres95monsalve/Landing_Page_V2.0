@@ -241,7 +241,7 @@ canvas {
 
 .table1 td,
 .table2 td {
-  padding: 10px;
+  padding: 10%;
   border: 1px;
   text-align: justify;
 }
@@ -254,25 +254,15 @@ canvas {
 }
 
 .ft-principal {
-  position: relative;
-  display: flex;
   margin-top: 5%;
-}
-.ft-pag {
-  display: flex;
-  justify-content: center;
   text-align: center;
 }
 
-.ft-pag-1 {
-  margin: 0;
-  width: 20%;
-  margin-left: 310%;
+.ft-pag{
+  margin: 4%;
+  width: 3%;
 }
 
-.ft-pag-2 {
-  margin: 0;
-}
 
 .texto-final {
   position: relative;
