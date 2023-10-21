@@ -1,5 +1,3 @@
-"use strict";
-
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(
   75,
@@ -9,11 +7,12 @@ var camera = new THREE.PerspectiveCamera(
 );
 
 var renderer = new THREE.WebGLRenderer({ alpha: true });
-var canvasWidth = 800;
-var canvasHeight = 600;
+var canvasWidth = window.innerWidth * 0.5;
+var canvasHeight = window.innerHeight * 0.6;
 renderer.setSize(canvasWidth, canvasHeight);
 renderer.domElement.style.position = "relative";
 renderer.domElement.style.display = "flex";
+renderer.domElement.style.marginTop = "-196%";
 document.body.appendChild(renderer.domElement);
 
 var geometry = new THREE.PlaneGeometry(1.1, 0.4);
@@ -25,6 +24,7 @@ var material = new THREE.MeshBasicMaterial({
   alphaTest: 0.5,
   side: THREE.DoubleSide,
 });
+
 var plane = new THREE.Mesh(geometry, material);
 scene.add(plane);
 
