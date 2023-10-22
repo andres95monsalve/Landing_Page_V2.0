@@ -10,9 +10,11 @@ var renderer = new THREE.WebGLRenderer({ alpha: true });
 var canvasWidth = window.innerWidth * 0.5;
 var canvasHeight = window.innerHeight * 0.6;
 renderer.setSize(canvasWidth, canvasHeight);
-renderer.domElement.style.position = "relative";
+renderer.domElement.style.position = "absolute";
 renderer.domElement.style.display = "flex";
-renderer.domElement.style.marginTop = "-196%";
+renderer.domElement.style.marginTop = "-145%";
+renderer.domElement.style.left = "-22%";
+renderer.domElement.style.canvasWidth = "8%";
 document.body.appendChild(renderer.domElement);
 
 var geometry = new THREE.PlaneGeometry(1.1, 0.4);
@@ -114,8 +116,8 @@ gsap
   .timeline({
     scrollTrigger: {
       trigger: ".imagen-final",
-      start: "-50% center",
-      end: "200% center",
+      start: "-0% center",
+      end: "100% center",
       scrub: true,
       markers: false,
       toggleActions: "play reverse play",
