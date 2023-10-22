@@ -7,15 +7,8 @@ var camera = new THREE.PerspectiveCamera(
 );
 
 var renderer = new THREE.WebGLRenderer({ alpha: true });
-var canvasWidth = window.innerWidth * 0.5;
-var canvasHeight = window.innerHeight * 0.6;
-renderer.setSize(canvasWidth, canvasHeight);
-renderer.domElement.style.position = "absolute";
-renderer.domElement.style.display = "flex";
-renderer.domElement.style.marginTop = "-145%";
-renderer.domElement.style.left = "-22%";
-renderer.domElement.style.canvasWidth = "8%";
-document.body.appendChild(renderer.domElement);
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.querySelector('.logo-principal').appendChild(renderer.domElement);
 
 var geometry = new THREE.PlaneGeometry(1.1, 0.4);
 var textureLoader = new THREE.TextureLoader();
@@ -32,23 +25,21 @@ scene.add(plane);
 
 camera.position.z = 2;
 
-function onWindowResize(event) {
+function onWindowResize() {
   var aspect = window.innerWidth / window.innerHeight;
-  renderer.setSize(canvasWidth, canvasHeight);
+  renderer.setSize(window.innerWidth, window.innerHeight);
   camera.aspect = aspect;
   camera.updateProjectionMatrix();
 
-  var scaleFactor = window.innerWidth / window.innerHeight;
-  plane.position.x = scaleFactor > 1 ? 0 : -0.5 * (1 - scaleFactor);
+  var planeAspect = 1.1 / 0.4;
+  plane.scale.set(
+    aspect > planeAspect ? aspect / planeAspect : 1,
+    aspect < planeAspect ? 1 / (aspect / planeAspect) : 1,
+    1
+  );
 }
 
-window.addEventListener(
-  "resize",
-  function (event) {
-    onWindowResize(event);
-  },
-  false
-);
+window.addEventListener("resize", onWindowResize, false);
 
 function render() {
   plane.rotation.y += 0.02;
@@ -56,6 +47,7 @@ function render() {
   renderer.render(scene, camera);
 }
 render();
+
 
 const menuBtn = document.getElementById("menuBtn");
 const menuSection = document.getElementById("menu");
@@ -116,17 +108,18 @@ gsap
   .timeline({
     scrollTrigger: {
       trigger: ".imagen-final",
-      start: "-0% center",
-      end: "100% center",
+      start: "-200% top",
+      end: "200% top",
       scrub: true,
       markers: false,
-      toggleActions: "play reverse play",
+      toggleActions: "reverse play reverse play",
     },
   })
   .to(".imagen-final", {
-    x: -1050,
+    xPercent: -200,
     duration: 0.5,
   });
+
 
 
 var buttonUp = document.getElementById("button-up");
