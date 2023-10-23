@@ -12,7 +12,7 @@ var canvasHeight = window.innerHeight * 0.6;
 renderer.setSize(canvasWidth, canvasHeight);
 renderer.domElement.style.position = "relative";
 renderer.domElement.style.display = "flex";
-renderer.domElement.style.marginTop = "-146%";
+renderer.domElement.style.marginTop = "-146.1%";
 renderer.domElement.style.left = "-22%";
 renderer.domElement.style.canvasWidth = "8%";
 document.body.appendChild(renderer.domElement);
