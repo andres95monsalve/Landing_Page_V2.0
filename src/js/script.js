@@ -7,8 +7,15 @@ var camera = new THREE.PerspectiveCamera(
 );
 
 var renderer = new THREE.WebGLRenderer({ alpha: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.querySelector('.logo-principal').appendChild(renderer.domElement);
+var canvasWidth = window.innerWidth * 0.5;
+var canvasHeight = window.innerHeight * 0.6;
+renderer.setSize(canvasWidth, canvasHeight);
+renderer.domElement.style.position = "relative";
+renderer.domElement.style.display = "flex";
+renderer.domElement.style.marginTop = "-146%";
+renderer.domElement.style.left = "-22%";
+renderer.domElement.style.canvasWidth = "8%";
+document.body.appendChild(renderer.domElement);
 
 var geometry = new THREE.PlaneGeometry(1.1, 0.4);
 var textureLoader = new THREE.TextureLoader();
@@ -25,21 +32,23 @@ scene.add(plane);
 
 camera.position.z = 2;
 
-function onWindowResize() {
+function onWindowResize(event) {
   var aspect = window.innerWidth / window.innerHeight;
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(canvasWidth, canvasHeight);
   camera.aspect = aspect;
   camera.updateProjectionMatrix();
 
-  var planeAspect = 1.1 / 0.4;
-  plane.scale.set(
-    aspect > planeAspect ? aspect / planeAspect : 1,
-    aspect < planeAspect ? 1 / (aspect / planeAspect) : 1,
-    1
-  );
+  var scaleFactor = window.innerWidth / window.innerHeight;
+  plane.position.x = scaleFactor > 1 ? 0 : -0.5 * (1 - scaleFactor);
 }
 
-window.addEventListener("resize", onWindowResize, false);
+window.addEventListener(
+  "resize",
+  function (event) {
+    onWindowResize(event);
+  },
+  false
+);
 
 function render() {
   plane.rotation.y += 0.02;
@@ -47,7 +56,6 @@ function render() {
   renderer.render(scene, camera);
 }
 render();
-
 
 const menuBtn = document.getElementById("menuBtn");
 const menuSection = document.getElementById("menu");
